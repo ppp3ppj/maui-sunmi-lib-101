@@ -33,7 +33,6 @@ public class SunmiPrinter {
 
     private SunmiPrinter(){}
 
-
     public static SunmiPrinter getInstance() {
         return printer;
     }
@@ -58,6 +57,18 @@ public class SunmiPrinter {
         }
         return -1;
     }
+
+    /*
+    public void updateFirmware() {
+        if (woyouService != null) {
+            try {
+                woyouService.updateFirmware();
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    */
 
     public String getServiceVersion() {
         if (woyouService != null) {
@@ -129,6 +140,242 @@ public class SunmiPrinter {
             }
         }
         return UNREACHABLE;
+    }
+
+    /*
+        // Please check AIDL
+    public void getPrintedLength(SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.getPrintedLength(makeCallback(callback));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+    */
+
+    public void sendRAWData(byte[] data, SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.sendRAWData(data, makeCallback(callback));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void setAlignment( int alignment, SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.setAlignment(alignment, makeCallback(callback));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void printText(String text, SunmiCallback callback) {
+        if  (woyouService != null) {
+            try {
+                woyouService.printText(text, makeCallback(callback));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void setFontSize(float fontSize, SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.setFontSize(fontSize, makeCallback(callback));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void setFontName(String typeface, SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.setFontName(typeface, makeCallback(callback));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void lineWrap(int n, SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.lineWrap(n, makeCallback(callback));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void printTextWithFont(String text, String typeface, float fontSize, SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.printTextWithFont(text, typeface, fontSize, makeCallback(callback));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void printColumnsText(String[] colsTextArr, int[] colsWidthArr, int[] colsAlign, SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.printColumnsText(colsTextArr, colsWidthArr, colsAlign, makeCallback(callback));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void printBitmap(Bitmap bitmap, SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.printBitmap(bitmap, makeCallback(callback));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void printBarCode(String data, int symbology, int height, int width, int textposition, SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.printBarCode(data, symbology, height, width, textposition, makeCallback(callback));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void printQRCode(String data, int moduleSize, int errorLevel, SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.printQRCode(data, moduleSize, errorLevel, makeCallback(callback));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void printOriginalText(String text, SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.printOriginalText(text, makeCallback(callback));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void commitPrinterBuffer(SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.commitPrinterBuffer();
+                if (callback != null) {
+                    callback.onRunResult(true);
+                }
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void enterPrinterBuffer(boolean clean, SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.enterPrinterBuffer(clean);
+                if (callback != null) {
+                    callback.onRunResult(true);
+                }
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
+    }
+
+    public void exitPrinterBuffer(boolean commit, SunmiCallback callback) {
+        if (woyouService != null) {
+            try {
+                woyouService.exitPrinterBuffer(commit);
+                if (callback != null) {
+                    callback.onRunResult(true);
+                }
+            } catch (RemoteException e) {
+                e.printStackTrace();
+                ThrowErrorCallback(callback);
+            }
+        }
+        else {
+            ThrowErrorCallback(callback);
+        }
     }
 
     private void ThrowErrorCallback(SunmiCallback callback) {
