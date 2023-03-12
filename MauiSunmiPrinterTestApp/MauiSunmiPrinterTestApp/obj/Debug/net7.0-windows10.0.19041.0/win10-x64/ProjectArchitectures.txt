@@ -1,0 +1,1 @@
+C:\work\repos_github_me\maui_sunmi_lib_test\MauiSunmiPrinterTestApp\MauiSunmiPrinterTestApp\MauiSunmiPrinterTestApp.csproj;x64

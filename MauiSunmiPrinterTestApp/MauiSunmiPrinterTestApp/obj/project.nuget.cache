@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bvSUGv3LeQjuSfFdQZB6z+ChS+sDIS+KGhzgH1aspVcOEQ8AN4pidWc+d5slzqK0UZyunoMxub20vMGfHiHeJw==",
+  "dgSpecHash": "5YUe9Cn+5PNO+NPd83ukk+bPsb0Mw2V00es9e1JUxx/LnChRGRUTcwyuT4c2oPX64uAWVs9FFWS/mlG6sBA1JQ==",
   "success": true,
   "projectFilePath": "C:\\work\\repos_github_me\\maui_sunmi_lib_test\\MauiSunmiPrinterTestApp\\MauiSunmiPrinterTestApp\\MauiSunmiPrinterTestApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\AthiwatKhamnon\\.nuget\\packages\\communitytoolkit.mvvm\\8.1.0\\communitytoolkit.mvvm.8.1.0.nupkg.sha512",
     "C:\\Users\\AthiwatKhamnon\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\AthiwatKhamnon\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\AthiwatKhamnon\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
